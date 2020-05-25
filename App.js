@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  TouchableHighlight,
+  TouchableOpacity,
+} from "react-native";
 
 export default function App() {
   let str =
@@ -24,6 +32,14 @@ export default function App() {
     console.log("你按到 Button 了 !!!");
   };
 
+  const printHighlight = () => {
+    console.log("你按到 Highlight 了 !!!");
+  };
+
+  const printOpacity = () => {
+    console.log("你按到 Opacity 了 !!!");
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.mainText}>{str}</Text>
@@ -46,6 +62,17 @@ export default function App() {
       <View style={styles.btnBkg}>
         <Button title="第二顆按鈕" onPress={() => printButton()} />
       </View>
+
+      <TouchableHighlight
+        style={styles.highlight}
+        onPress={() => printHighlight()}
+      >
+        <Text>按鈕 TouchableHighlight</Text>
+      </TouchableHighlight>
+
+      <TouchableOpacity style={styles.opacity} onPress={() => printOpacity()}>
+        <Text>按鈕 TouchableOpacity</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -81,4 +108,6 @@ const styles = StyleSheet.create({
     height: 30,
     borderColor: "red",
   },
+  highlight: { width: 200, height: 50, backgroundColor: "yellowgreen" },
+  opacity: { width: 200, height: 50, backgroundColor: "peru" },
 });
