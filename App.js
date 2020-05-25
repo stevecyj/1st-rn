@@ -20,6 +20,10 @@ export default function App() {
     console.log("按到 change count 按鈕了");
   };
 
+  const printButton = () => {
+    console.log("你按到 Button 了 !!!");
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.mainText}>{str}</Text>
@@ -39,6 +43,9 @@ export default function App() {
 
       <Button title="變更 food" onPress={() => changeFood()} />
       <Button title="change count" onPress={() => changeCount()} />
+      <View style={styles.btnBkg}>
+        <Button title="第二顆按鈕" onPress={() => printButton()} />
+      </View>
     </View>
   );
 }
@@ -66,5 +73,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 28,
     textAlign: "center",
+  },
+  btnBkg: {
+    backgroundColor: "#00aeef",
+    borderRadius: 5,
+    width: 300,
+    height: 30,
+    borderColor: "red",
   },
 });
