@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableHighlight,
   TouchableOpacity,
+  Image,
 } from "react-native";
 
 export default function App() {
@@ -71,7 +72,11 @@ export default function App() {
       </TouchableHighlight>
 
       <TouchableOpacity style={styles.opacity} onPress={() => printOpacity()}>
-        <Text>按鈕 TouchableOpacity</Text>
+        <Image
+          style={{ width: 100, height: 100 }}
+          source={require("./src/img/noun_Button_2810881.png")}
+        />
+        {/* <Text>按鈕 TouchableOpacity</Text> */}
       </TouchableOpacity>
     </View>
   );
@@ -108,6 +113,6 @@ const styles = StyleSheet.create({
     height: 30,
     borderColor: "red",
   },
-  highlight: { width: 200, height: 50, backgroundColor: "yellowgreen" },
-  opacity: { width: 200, height: 50, backgroundColor: "peru" },
+  highlight: { width: 100, height: 100, backgroundColor: "yellowgreen" },
+  opacity: { width: 100, height: 100, backgroundColor: "peru" },
 });
